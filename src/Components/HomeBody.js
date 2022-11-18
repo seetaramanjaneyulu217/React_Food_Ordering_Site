@@ -20,7 +20,7 @@ const HomeBody = ({ getTheCartValue, getTheItems, setCost }) => {
 
     let itemsArray = []
 
-    await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=929610251c2845ada4b6d307ccf21bd4&query=${searchQuery.current.value}`)
+    await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=&query=${searchQuery.current.value}`)
     .then(response => response.json())
     .then(data => {
        (data.results).forEach(item => {
