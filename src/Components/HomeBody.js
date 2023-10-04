@@ -19,8 +19,9 @@ const HomeBody = ({ getTheCartValue, getTheItems, setCost }) => {
   async function searchItems() {
 
     let itemsArray = []
+    const api_key = process.env.REACT_APP_SPOONACULAR_API_KEY
 
-    await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=929610251c2845ada4b6d307ccf21bd4&query=${searchQuery.current.value}`)
+    await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${api_key}&query=${searchQuery.current.value}`)
     .then(response => response.json())
     .then(data => {
        (data.results).forEach(item => {
